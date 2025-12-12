@@ -1,0 +1,21 @@
+{
+    "name": "ai-chat-app",
+    "version": "1.0.0",
+    "description": "AI Chat App with session-based history",
+    "scripts": {
+        "install:all": "cd backend && npm install && cd ../frontend && npm install",
+        "dev:backend": "cd backend && npm run dev",
+        "dev:frontend": "cd frontend && npm run dev",
+        "dev": "npm run dev:backend & npm run dev:frontend",
+        "build": "cd frontend && npm install && npm run build && cd ../backend && npm install && npm run build",
+        "start": "cd backend && npm start"
+    },
+    "keywords": [
+        "ai",
+        "chat",
+        "openrouter",
+        "react"
+    ],
+    "author": "",
+    "license": "MIT"
+}
