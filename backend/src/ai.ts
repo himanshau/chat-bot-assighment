@@ -1,9 +1,8 @@
 import { createOpenAI } from '@ai-sdk/openai';
 import { generateText } from 'ai';
-import dotenv from 'dotenv';
 import type { Message } from './db.js';
 
-dotenv.config();
+// dotenv is configured in index.ts
 
 // Initialize OpenRouter client (OpenAI-compatible)
 const openrouter = createOpenAI({

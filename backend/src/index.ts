@@ -3,14 +3,16 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { initDatabase, getOrCreateUser, createSession, getUserSessions, deleteSession, saveMessage, getSessionMessages, clearSessionMessages, updateSessionTitle } from './db.js';
-import { generateAIResponse } from './ai.js';
-
-dotenv.config();
 
 // Get directory name for ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+// Load .env from backend folder (works from both src/ and dist/)
+dotenv.config({ path: path.join(__dirname, '..', '.env') });
+
+import { initDatabase, getOrCreateUser, createSession, getUserSessions, deleteSession, saveMessage, getSessionMessages, clearSessionMessages, updateSessionTitle } from './db.js';
+import { generateAIResponse } from './ai.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
