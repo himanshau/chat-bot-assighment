@@ -18,8 +18,8 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
-// Health check
-app.get('/', (_req: Request, res: Response) => {
+// Health check - moved to /api/health so frontend can be served at /
+app.get('/api/health', (_req: Request, res: Response) => {
     res.json({ status: 'ok', message: 'AI Chat Backend Running' });
 });
 
